@@ -1,0 +1,70 @@
+Major Doomsdays:
+ 4/4, 6/6, 8/8, 10/10, 12/12, 9/5, 5/9, 7/11, 11/7
+ 1/3, or 1/4 for leap year
+ 2/28, or 2/29 for leap year
+ 14th mrach/ pi day
+
+doomsday for years:
+ 2000:Tue
+ 2001:Wed
+ 2002:Thrs
+ 2003:Fri
+ 2004:Sun
+ leap year go forward an extra day
+
+ *Calculation to find doomsday of a particular year = doomsday of refrenced year + (choosen year - refrenced year) + (choosen year - refrenced year)/4{ignore fractions}
+
+Day and their given number
+ sunday = 0
+ monday = 1
+ tuesday = 2
+ wednesday = 3
+ thursday = 4
+ friday = 5
+ saturday = 6
+
+century doomsdays
+ 1700: sunday       --     
+ 1800: friday       --  same pattern in following years 
+ 1900: wednesday    --
+ 2000: tuesday      --
+
+ 2100: sunday
+ 2200: friday
+ 2300: wednesday
+ 2400: tuesday
+
+shortcurt for years: all these are zero
+ 0, 28, 56, 84
+
+shortcut:( dont understnad thsi part yet)
+ 0: 0
+ 12: 1
+ 24: 2
+ 36: 3
+ 48: 4
+ 60: 5
+ 72: 6
+ 84: 7
+ 96: 8
+
+
+ ONE EXAMPLE:
+
+ 18th june 1976
+ FIrst part:
+
+ 1976: 72 is 6(from line 47) + 4(from 76-72) + 1(leap year from 4/4) + 
+    3(from the century of 19 and doomsday for 1900 is wed(from line 29) 
+    and wed is 3(from line 21))
+    = 14 = 0(since 14 is a multiple of 7)
+
+thus doomsday for 1976 is sunday(from line 18)
+
+now for 18th june:
+closest special date to 18th june is 6/6.
+now since 6 + 12 = 18(dates)
+0+12(days) = will be the day on 18th june
+0+12 = 0+5(from 12-7) = 5 which is friday
+
+thsu 18th june 1976 is friday
