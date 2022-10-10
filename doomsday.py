@@ -28,10 +28,9 @@ def feb_limit(date, month):
     else:
         pass
 
-
-
 #tells if it is a leap year.
 def lp_year(year):
+    global lp_year
     year = int(year)
     if year % 4 == 0:
         if year % 100 == 0:
