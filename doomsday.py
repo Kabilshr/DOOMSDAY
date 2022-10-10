@@ -28,6 +28,14 @@ def feb_limit(date, month):
     else:
         pass
 
+#year digit split
+def year_split(year):
+    year = str(year)
+    global centuary
+    global num_year
+    centuary = year[0:2]
+    num_year = year[2:]
+
 #tells if it is a leap year.
 def lp_year(year):
     global lp_year
@@ -43,6 +51,7 @@ def lp_year(year):
     else:
         lp_year = False
 
+
 print("Welcome to DOOMSDAY! This is a program that tells you day of any date.\nGive it a try!")
 while(True):
     date = eval(input("Enter date: "))
@@ -54,6 +63,9 @@ while(True):
     year = eval(input("Enter year: "))
     if type(year) != int:
         print("Please type an integer  in year!")
+    
+    #slice year
+    year_split(year)
 
     #limit check
     date_limit(date) 
@@ -64,5 +76,3 @@ while(True):
 
     #febuary number of days check
     feb_limit(date, month)
-
-    
