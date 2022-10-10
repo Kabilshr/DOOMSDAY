@@ -12,6 +12,24 @@ def month_limit(month):
     else:
         return month
 
+#febuary day limit
+def feb_limit(date, month):
+    if month == 2:
+        if lp_year == True:
+            if date > 29:
+                print("Febuary doesn't have more than 29 days.")
+            else:
+                pass
+        else:
+            if date > 28:
+                print("Febuary doesn't have more than 28 days as it is not a leap year.")
+            else:
+                pass
+    else:
+        pass
+
+
+
 #tells if it is a leap year.
 def lp_year(year):
     year = int(year)
@@ -45,6 +63,7 @@ while(True):
     #check leap year
     lp_year(year)
 
-    print("result")
+    #febuary number of days check
+    feb_limit(date, month)
 
     
