@@ -7,7 +7,6 @@ ref_yrs = int(closest(llst, year))
 k = int((llst.index(ref_yrs)))
 if (year - ref_yrs) < 0:
     ref_yrs = llst[(k - 1)]
-    print(ref_yrs)
 else:
     ref_yrs = int(closest(llst, year))
 
