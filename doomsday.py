@@ -55,7 +55,7 @@ def lp_year(year):
 alert = "IMPORTANT NOTE!"
 alert = alert.center(40, "~")
 thanks = "THANK YOU"
-thanks = thanks.center(18, "~")
+thanks = thanks.center(40, "~")
 print("Welcome to DOOMSDAY! This is a program that tells you day of any date.")
 imp_msg = "{0}\nIF YOU ENTER ANYTHING OTHER THAN INTEGERS CHARACTERS, THE PROGRAM WILL GIVE AN ERROR BECAUSE I HAVE NOT WRITTEN ANY ERROR HANDLING CODE. IF YOU ENTER IT BY MISTAKE THEN PLEASE RESTART THE PROGRAM\n{1}".format(alert, thanks)
 imp_msg = imp_msg.rjust(20, " ")
@@ -76,19 +76,14 @@ else:
             again = "y"
 
         if str.lower(again) == "n":
+            print(thanks +"\nfor trying out our program")
             break
         else:
             #inputs
             date = int(input("Enter date: "))
-            if type(date) != int:
-                print("Please type an integer number in date!")
             month = int(input("Enter month: "))
-            if type(month) != int:
-                print("Please type an integer  in month!")
             year = int(input("Enter year: "))
-            if type(year) != int:
-                print("Please type an integer  in year!")
-            
+                        
             #slice year
             year_split(year)
 
