@@ -33,12 +33,26 @@ def year_split(year):
     year = str(year)
     global century
     global num_year
-    century = year[0:2]
-    num_year = year[2:]
+    century = int(year[0:2])
+    num_year = int(year[2:])
+
+#tells if it is a leap year.
+def lp_year(year):
+    global is_lp_year
+    year = int(year)
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                is_lp_year = True
+            else:
+                is_lp_year = False
+        else:
+            is_lp_year = True
+    else:
+        is_lp_year = False
 
 #find century code
 def cent_code(century):
-    century = int(century)
     global century_code
     tuesday = []
     sunday = []
@@ -70,22 +84,18 @@ def cent_code(century):
         
     elif century in wednesday:
         century_code = 3
-        
 
-#tells if it is a leap year.
-def lp_year(year):
-    global is_lp_year
-    year = int(year)
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                is_lp_year = True
-            else:
-                is_lp_year = False
-        else:
-            is_lp_year = True
+def yr_code(num_year):
+    global year_code
+    yr_div_12 = num_year //12 #how many times 12 goes into the year
+    yr_div_rem = num_year % 12 #remainder
+    rem_div = yr_div_rem // yr_div_12 #how many times quotent goes in remainder
+    Y = yr_div_12 + yr_div_rem + rem_div #adding all up
+    if Y > 6 :
+        year_code = Y % 6
     else:
-        is_lp_year = False
+        year_code = Y
+
 
 #MAIN PROGRAM
 alert = "IMPORTANT NOTE!"
@@ -96,7 +106,6 @@ print("Welcome to DOOMSDAY! This is a program that tells you day of any date.")
 imp_msg = "{0}\nIF YOU ENTER ANYTHING OTHER THAN INTEGERS CHARACTERS, THE PROGRAM WILL GIVE AN ERROR BECAUSE I HAVE NOT WRITTEN ANY ERROR HANDLING CODE. IF YOU ENTER IT BY MISTAKE THEN PLEASE RESTART THE PROGRAM\n{1}".format(alert, thanks)
 imp_msg = imp_msg.rjust(20, " ")
 print(imp_msg)
-print("Give it a try!")
 start = input("Are you ready to get started?y/n  ")
 if str.lower(start) == "n":
     print("Byeee!")
@@ -135,4 +144,9 @@ else:
 
             #get century code
             cent_code(century)
-            print(century_code)
+
+            print(type(num_year))
+
+            #get year code
+            yr_code(num_year)
+            print(year_code)
