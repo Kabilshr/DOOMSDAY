@@ -33,4 +33,29 @@ if (doomsday - k) < 0:
 else:
     k = int(clos(lst, doomsday))
 val = doomsday - k
-final_value = print(f'The DOOMSDAY of the year {year} is {val}')
+vall = ''
+
+if val == 0:
+    vall = 'sunday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 1:
+    vall = 'monday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 2:
+    vall = 'tuesday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 3:
+    vall = 'wednesday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 4:
+    vall = 'thursday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 5:
+    vall = 'friday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+elif val == 6:
+    vall = 'saturday'
+    print(f'The DOOMSDAY of the year {year} is {vall}')
+
+
+
