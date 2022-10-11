@@ -53,26 +53,37 @@ def lp_year(year):
 
 
 print("Welcome to DOOMSDAY! This is a program that tells you day of any date.\nGive it a try!")
-while(True):
-    date = eval(input("Enter date: "))
-    if type(date) != int:
-        print("Please type an integer number in date!")
-    month = eval(input("Enter month: "))
-    if type(month) != int:
-        print("Please type an integer  in month!")
-    year = eval(input("Enter year: "))
-    if type(year) != int:
-        print("Please type an integer  in year!")
-    
-    #slice year
-    year_split(year)
+start = input("Are you ready to get started?y/n  ")
+if str.lower(start) == "n":
+    quit
+else:
+    while(True):
+        if str.lower(again) == "n":
+            break
+        else:
+            #while loop count
+            x += 1
+            date = int(input("Enter date: "))
+            if type(date) != int:
+                print("Please type an integer number in date!")
+            month = int(input("Enter month: "))
+            if type(month) != int:
+                print("Please type an integer  in month!")
+            year = int(input("Enter year: "))
+            if type(year) != int:
+                print("Please type an integer  in year!")
+            
+            #slice year
+            year_split(year)
 
-    #limit check
-    date_limit(date) 
-    month_limit(month)
+            #limit check
+            date_limit(date) 
+            month_limit(month)
 
-    #check leap year
-    lp_year(year)
+            #check leap year
+            lp_year(year)
 
-    #febuary number of days check
-    feb_limit(date, month)
+            #febuary number of days check
+            feb_limit(date, month)
+            
+        #again = input("Do you want to try again? \n enter n to quit... y/n  ")
