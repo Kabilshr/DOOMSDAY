@@ -31,10 +31,46 @@ def feb_limit(date, month):
 #year digit split
 def year_split(year):
     year = str(year)
-    global centuary
+    global century
     global num_year
-    centuary = year[0:2]
+    century = year[0:2]
     num_year = year[2:]
+
+#find century code
+def cent_code(century):
+    century = int(century)
+    global century_code
+    tuesday = []
+    sunday = []
+    friday = []
+    wednesday = []
+    #CREATION OF LIST
+    # tuesday
+    for A in range(00, 99, 4):
+        tuesday.append(A)
+    # sunday
+    for B in range(1, 99, 4):
+        sunday.append(B)
+    # friday
+    for C in range(2, 99, 4):
+        friday.append(C)
+    # wednesday
+    for D in range(3, 99, 4):
+        wednesday.append(D)
+    
+    #finding code from list
+    if century in tuesday:
+        century_code = 2
+        
+    elif century in sunday:
+        century_code = 0
+        
+    elif century in friday:
+        century_code = 5
+        
+    elif century in wednesday:
+        century_code = 3
+        
 
 #tells if it is a leap year.
 def lp_year(year):
@@ -51,7 +87,7 @@ def lp_year(year):
     else:
         is_lp_year = False
 
-
+#MAIN PROGRAM
 alert = "IMPORTANT NOTE!"
 alert = alert.center(40, "~")
 thanks = "THANK YOU"
@@ -76,7 +112,7 @@ else:
             again = "y"
 
         if str.lower(again) == "n":
-            print(thanks +"\nfor trying out our program")
+            print("THANK YOU! for trying out our program")
             break
         else:
             #inputs
@@ -96,5 +132,7 @@ else:
 
             #febuary number of days check
             feb_limit(date, month)
-            
-        
+
+            #get century code
+            cent_code(century)
+            print(century_code)
