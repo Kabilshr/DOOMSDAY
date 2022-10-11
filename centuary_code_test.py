@@ -1,5 +1,4 @@
-num = input("enter number: ")
-num = int(num)
+num = int(input("enter number: "))
 tuesday = []
 sunday = []
 friday = []
