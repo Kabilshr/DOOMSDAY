@@ -1,11 +1,12 @@
 #is_lp_month = status of leap month
+#dday is the number of days the day of a date is away from doomsday
 #date
-#mont
+#month
 is_lp_year = True
 
 date = int(input('Enter date:'))
 month = int(input('Enter the month:'))
-
+doomsday = int(input('enter doomsday:'))
 def closest(llst, month):
 	return llst[min(range(len(llst)), key = lambda i: abs(llst[i]-month))]
 llst = [1,2,3,4,5,6,7,8,9,10,11,12]
@@ -51,6 +52,8 @@ elif doom_month == 12:
 if dday > 0:
     def clos(lst, dday):
 	    return lst[min(range(len(lst)), key = lambda i: abs(lst[i]-dday))]
+    
+    
     lst = [0, 7, 14, 21, 27, 35, 42, 49, 54, 63, 70, 77, 84, 91, 98]
     k=int((clos(lst, dday)))
     x=int((lst.index(k)))
@@ -59,18 +62,24 @@ if dday > 0:
         print(k)
     else:
         k = int(clos(lst, dday))
-    val = dday - k
+    day = dday - k
+    day_date = doomsday + day
 elif dday < 0:
     def clos(lst, dday):
 	    return lst[min(range(len(lst)), key = lambda i: abs(lst[i]-dday))]
+    
     lst = [-35,-27,-21,-14,-7, 0]
-    y=int((clos(lst, dday)))
-    x=int((lst.index(y)))
-    if (dday - y) < 0:
-        y = lst[(x - 1)]
-        print(y)
-    else:
-        y = int(clos(lst, dday))
-    val = dday - y
-    print(y)
+    k=int((clos(lst, dday)))
+    x=int((lst.index(k)))
+    day = abs(dday - k)
+    day_date = doomsday - day
 elif dday == 0:
+    day_date = doomsday
+
+day_list = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+if day_date>=0:
+    val = day_list[day_date]
+elif day_date<0:
+    val = day_list[(day_date+7)]
+
+print(val)
