@@ -1,31 +1,3 @@
-#date limit function
-def date_limit(date):
-    if date > 31:
-        print("There can't be more than 31 days in a months.")
-        print("This caused an error so please run the program again.")
-    else:
-        return date
-
-#month limit function
-def month_limit(month):
-    if month > 12:
-        print("There can't be more than 12 months.")
-        print("This caused an error so please run the program again.")
-    else:
-        return month
-
-#febuary day limit
-def feb_limit(date, month):
-    if month == 2:
-        if is_lp_year == True:
-            if date > 29:
-                print("Febuary doesn't have more than 29 days.")
-                print("This caused an error so please run the program again.")
-        else:
-            if date > 28:
-                print("Febuary doesn't have more than 28 days as it is not a leap year.")
-                print("This caused an error so please run the program again.")
-
 #year digit split
 #TODO improve for larger years
 def year_split(year):
@@ -192,7 +164,26 @@ else:
         else:#main program order
             #inputs
             date = int(input("Enter date: "))
+            if date > 31:
+                print("There can't be more than 31 days in a months.")
+                print("This caused an error so please run the program again.")
+                break
             month = int(input("Enter month: "))
+            if month > 12:
+                print("There can't be more than 12 months.")
+                print("This caused an error so please run the program again.")
+                break
+
+            if month == 2:
+                if is_lp_year == True:
+                    if date > 29:
+                        print("Febuary doesn't have more than 29 days.")
+                        print("This caused an error so please run the program again.")
+                else:
+                    if date > 28:
+                        print("Febuary doesn't have more than 28 days as it is not a leap year.")
+                        print("This caused an error so please run the program again.")
+            
             year = int(input("Enter year: "))
                         
             #slice year
