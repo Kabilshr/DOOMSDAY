@@ -56,6 +56,7 @@ def cent_code(century):
     elif century in wednesday:
         century_code = 3
 
+#TODO some problem need to be figured out
 def yr_code(num_year):
     global year_code
     if num_year == 0:
@@ -126,7 +127,7 @@ def fnd_day(dif_date):
     if dif_date == 0:
         day_cd = year_code
     elif dif_date < 0:
-        day_cd = abs(dif_date + year_code) + 1
+        day_cd = abs(dif_date + year_code)
         day_cd = dif_date % 7
     
     if dif_date > 6:
@@ -189,15 +190,8 @@ else:
             #slice year
             year_split(year)
 
-            #limit check
-            date_limit(date) 
-            month_limit(month)
-
             #check leap year
             lp_year(year)
-
-            #febuary number of days check
-            feb_limit(date, month)
 
             #get century code
             cent_code(century)
@@ -212,8 +206,10 @@ else:
             fnd_day(dif_date)
 
             day_list = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-            day_cd = day_cd + 1
-            day = day_list[day_cd]
-            
+            #credit for this function: Krish
+            if day_cd >= 0:
+                day = day_list[day_cd + 1]
+            elif day_cd < 0:
+                day = day_list[(day_cd + 8)] #yr_code problem fix
 
             print(day)
