@@ -4,8 +4,8 @@ def year_split(year):
     year = str(year)
     global century
     global num_year
-    century = int(year[0:2])
-    num_year = int(year[2:])
+    century = int(year[0:-2])
+    num_year =int(year[-1:-3:-1])
 
 #tells if it is a leap year.
 def lp_year(year):
@@ -31,16 +31,16 @@ def cent_code(century):
     wednesday = []
     #CREATION OF LIST
     # tuesday
-    for A in range(0, 99, 4):
+    for A in range(0, 9999, 4):
         tuesday.append(A)
     # sunday
-    for B in range(1, 99, 4):
+    for B in range(1, 9999, 4):
         sunday.append(B)
     # friday
-    for C in range(2, 99, 4):
+    for C in range(2, 9999, 4):
         friday.append(C)
     # wednesday
-    for D in range(3, 99, 4):
+    for D in range(3, 9999, 4):
         wednesday.append(D)
     
     #finding code from list

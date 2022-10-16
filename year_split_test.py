@@ -1,0 +1,5 @@
+year = input("enter year: ")
+century = (year[0:-2])
+num_year = (year[-1:-3:-1])
+print("century", century)
+print(num_year)
